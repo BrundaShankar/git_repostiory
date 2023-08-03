@@ -1,0 +1,23 @@
+import pandas as pd
+df={
+    'mpg':[18,15,18,16,17],
+    'cylinders':[8,8,0,4,8],
+    'displacement':[307,350,318,304,302],
+    'horsepower':[130,185,150,150,140],
+    'weight':[3504,3883,3438,3433,3449],
+    'acceleration':[12.0,11.5,11.0,12.0,10.5],
+    'model year':[70,71,70,80,70],
+    'origin':[1,1,1,1,1],
+    'car name':['chevrolet','buick','plymouth','amc','ford']
+    }
+x=pd.DataFrame(df)
+print("\n")
+print(x)
+a=x.describe()
+print(a)
+b=x[x['cylinders']==8]
+print("\n")
+print('cars with 8 cylinders')
+print(b)
+c=x.groupby('model year')['model year'].count()
+print('\n cars manufactured in each year',c)
